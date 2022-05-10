@@ -69,7 +69,7 @@ public class Cell {
      *   Updates the status of the cell
      */
     public void setValue(CellStatus value) {
-        value = this.value;
+
         switch (value){
             case EMPTY:
                 this.jButton.setBackground(new Color(820000));
