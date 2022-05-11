@@ -12,6 +12,7 @@ import uk.ac.ncl.ui.MainPanel;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static uk.ac.ncl.Constants.*;
 
@@ -76,9 +77,16 @@ public class MoveChecker {
     public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
         ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
 
+        for (int a = 0; a < BOARD_SIZE; a++) {
+            for (Cell cell : this.cells[a]) {
+                if (cell.getValue() == CellStatus.EMPTY) {
+                    potentialMoves.addAll(Arrays.asList(this.cells[a]));
+                }
+            }
+        }
+
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (Cell cell : this.cells[i]) {
-                ///potentialMoves.add(cell);////////
                 if (cell.getValue() == CellStatus.EMPTY){
                     if (cell.isLegal(colour, cells)){
                         potentialMoves.remove(cell);
