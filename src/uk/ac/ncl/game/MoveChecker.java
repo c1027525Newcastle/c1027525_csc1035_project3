@@ -78,6 +78,7 @@ public class MoveChecker {
 
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (Cell cell : this.cells[i]) {
+                ///potentialMoves.add(cell);////////
                 if (cell.getValue() == CellStatus.EMPTY){
                     if (cell.isLegal(colour, cells)){
                         potentialMoves.remove(cell);
@@ -95,7 +96,7 @@ public class MoveChecker {
      * @param colour - new colour
      */
     public void colourPieces(ArrayList<Cell> cells, CellStatus colour) {
-        for (int i = 0; i < cells.size() - 1; i++){
+        for (int i = 0; i < cells.size(); i++){
             cells.get(i).setValue(colour);
         }
     }
