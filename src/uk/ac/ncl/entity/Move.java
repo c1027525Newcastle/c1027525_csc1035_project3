@@ -18,7 +18,7 @@ public class Move {
     private ArrayList<DirectedMove> moves;
 
     /**
-     * Stores the total number of pieces to flip during the move.
+     * Stores the total number of pieces to flip during the move. /////////////////////////////////////////////////////
      */
     private int score;
 

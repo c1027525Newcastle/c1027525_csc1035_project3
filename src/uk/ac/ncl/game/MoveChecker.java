@@ -79,7 +79,7 @@ public class MoveChecker {
 
         for (int a = 0; a < BOARD_SIZE; a++) {
             for (Cell cell : this.cells[a]) {
-                if (cell.getValue() == CellStatus.GRAY) {
+                if (cell.getValue() == CellStatus.EMPTY) {
                     potentialMoves.addAll(Arrays.asList(this.cells[a]));
                     System.out.println(potentialMoves);
                 }
