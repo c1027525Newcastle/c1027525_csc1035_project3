@@ -53,6 +53,8 @@ public class Cell {
 
     /**
      *   Changes button's design to have an effect of the "pressed" button
+     *   @param colour - colour of the current player
+     *   @param isPressed - boolean value whether the button is pressed
      */
     public void colourTemp(Color colour, boolean isPressed){
         this.jButton.setBackground(colour);
