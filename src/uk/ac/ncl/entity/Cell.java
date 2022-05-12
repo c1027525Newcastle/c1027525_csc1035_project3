@@ -69,6 +69,7 @@ public class Cell {
 
     /**
      *   Updates the status of the cell
+     *   @param value - the colour that need to be used for the cell
      */
     public void setValue(CellStatus value) {
 
