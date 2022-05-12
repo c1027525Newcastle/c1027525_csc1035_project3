@@ -40,8 +40,8 @@ public class MoveChecker {
         Cell opponentsMove = null;
         for (Cell cell : potentialMoves){
                 opponentsMove = opponentsMove == null
-                        || cell.getMove().getScore() > opponentsMove.getMove().getScore() //// I would put OR instead of AND
-                        ? cell////
+                        || cell.getMove().getScore() > opponentsMove.getMove().getScore()
+                        ? cell
                         : opponentsMove;
         }
         return opponentsMove;
@@ -77,13 +77,15 @@ public class MoveChecker {
     public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
         ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
 
-        for (int a = 0; a < BOARD_SIZE; a++) {
-            for (Cell cell : this.cells[a]) {
-                if (cell.getValue() == CellStatus.EMPTY) {
-                    potentialMoves.addAll(Arrays.asList(this.cells[a]));
+        int a = 0;
+        //for (int a = 0; a < BOARD_SIZE; a++) {
+        for (Cell cell : this.cells[a]) {
+            if (cell.getValue() == CellStatus.EMPTY) {
+                potentialMoves.addAll(Arrays.asList(this.cells[a]));
+            a += 1;
                 }
             }
-        }
+
 
         for (int i = 0; i < BOARD_SIZE; i++) {
             for (Cell cell : this.cells[i]) {
