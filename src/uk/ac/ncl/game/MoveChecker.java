@@ -55,7 +55,7 @@ public class MoveChecker {
      */
     public void flipPieces(Cell cell, CellStatus colour) {
         cell.colourTemp(colour == OPPONENTS_CELL_STATUS ? OPPONENTS_COLOUR : PLAYERS_COLOUR, true);
-        for (DirectedMove move : cell.getMove().getMoves()) {
+        for (DirectedMove move : cell.getMove().getMoves()) { ////////for loop not opening
             int[] dir = move.getDirection();
             int d_row = cell.getRow();
             int d_col = cell.getColumn();
@@ -119,7 +119,7 @@ public class MoveChecker {
         int lights = 0;
         int darks = 0;
 
-        for (int row = 0; row < BOARD_SIZE; row++) {
+        for (int row = 0; row < BOARD_SIZE; row++) { //////not counting properly
             for (Cell cell : this.cells[row]) {
                 if (cell.getValue() == CellStatus.DARK){
                     darks++;

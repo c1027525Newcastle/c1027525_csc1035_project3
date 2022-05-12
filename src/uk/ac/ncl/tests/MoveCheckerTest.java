@@ -27,7 +27,7 @@ class MoveCheckerTest {
                 CellStatus cellStatus = CellStatus.EMPTY;
                 Cell tempEl = new Cell(cellStatus, new JButton(), i, j);
                 if ((i == 3 && j == 4) || (i == 4 && j == 3)) {
-                    tempEl.setValue( CellStatus.LIGHT);
+                    tempEl.setValue(CellStatus.LIGHT); /////Might not set the values properly
                 } else if ((i == 4 && j == 4) || (i == 3 && j == 3)) {
                     tempEl.setValue(CellStatus.DARK);
                 }

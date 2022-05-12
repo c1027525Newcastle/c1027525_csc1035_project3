@@ -58,7 +58,7 @@ public class Cell {
         this.jButton.setBackground(colour);
         if (isPressed) {
             this.jButton.setBorderPainted(true);
-            this.jButton.setBorder(new LineBorder(Color.RED));
+            this.jButton.setBorder(new LineBorder(Color.RED)); ///something wrong here in setting it red
         }
         else {
             this.jButton.setBorderPainted(false);
@@ -109,7 +109,7 @@ public class Cell {
      * If such a move exists, returns true and adds information to the piece.
      * @param colour - colour of the current player
      * @param cells - current information about the board
-     * @return whether move is possible for the piece. If this is the case, then possible moves are stored in Piece.
+     * @return whether move is possible for the piece. If this is the case, then possible moves are stored in moves.
      */
     public boolean isLegal(CellStatus colour, Cell[][] cells){
         CellStatus opponent = colour == CellStatus.LIGHT ? CellStatus.DARK : CellStatus.LIGHT;
@@ -151,6 +151,6 @@ public class Cell {
      * @return true if the cell index is inside board boundaries
      */
     private boolean IsOnBoard(int row, int column){
-        return 0 <= column &&  column < BOARD_SIZE && 0 <=row && row < BOARD_SIZE;
+        return 0 <=column &&  column < BOARD_SIZE && 0 <=row && row < BOARD_SIZE;
     }
 }
