@@ -41,7 +41,7 @@ public class MoveChecker {
         for (Cell cell : potentialMoves){
                 opponentsMove = opponentsMove == null
                         && cell.getMove().getScore() > opponentsMove.getMove().getScore()
-                        ? cell
+                        ? cell////
                         : opponentsMove;
         }
         return opponentsMove;
@@ -79,8 +79,9 @@ public class MoveChecker {
 
         for (int a = 0; a < BOARD_SIZE; a++) {
             for (Cell cell : this.cells[a]) {
-                if (cell.getValue() == CellStatus.EMPTY) {
+                if (cell.getValue() == CellStatus.GRAY) {
                     potentialMoves.addAll(Arrays.asList(this.cells[a]));
+                    System.out.println(potentialMoves);
                 }
             }
         }
@@ -110,7 +111,7 @@ public class MoveChecker {
     }
 
     /**
-     * Sums up results of the game
+     * Sums up results of the game and decides which colour won the game
      *
      * @return string with the results of the game
      */
