@@ -111,7 +111,7 @@ public class MoveChecker {
     }
 
     /**
-     * Sums up results of the game and decides which colour won the game
+     * Sums up results of the game and decides which colour won the game and returns string with the score
      *
      * @return string with the results of the game
      */
