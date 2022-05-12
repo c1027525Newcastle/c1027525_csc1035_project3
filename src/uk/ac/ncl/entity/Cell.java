@@ -150,7 +150,8 @@ public class Cell {
 
     /**
      * Checks whether the cell is on board.
-     *
+     * @param column - row of the cell
+     * @param row - column of the cell
      * @return true if the cell index is inside board boundaries
      */
     private boolean IsOnBoard(int row, int column){
