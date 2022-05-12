@@ -40,7 +40,7 @@ public class MoveChecker {
         Cell opponentsMove = null;
         for (Cell cell : potentialMoves){
                 opponentsMove = opponentsMove == null
-                        && cell.getMove().getScore() > opponentsMove.getMove().getScore()
+                        || cell.getMove().getScore() > opponentsMove.getMove().getScore() //// I would put OR instead of AND
                         ? cell////
                         : opponentsMove;
         }
@@ -81,7 +81,6 @@ public class MoveChecker {
             for (Cell cell : this.cells[a]) {
                 if (cell.getValue() == CellStatus.EMPTY) {
                     potentialMoves.addAll(Arrays.asList(this.cells[a]));
-                    System.out.println(potentialMoves);
                 }
             }
         }
